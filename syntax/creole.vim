@@ -13,7 +13,7 @@ syn match creoleUrl     "\<\([A-Z][a-z0-9.]\+\)\{2,}\>"
 syn region creoleEscape matchgroup=creoleKeyword start=+\~+ end=+\s+ end=+$+
 
 syn region creoleLinkBlock matchgroup=creoleKeyword start=+\[\[+ end=+\]\]+ contains=creoleLinkBar,creoleBold,creoleItalic,creoleUnderline,creoleBoldItalic,creoleBoldUnderline,creoleItalicBold,creoleItalicUnderline,creoleUnderlineBold,creoleUnderlineItalic,creoleBoldItalicUnderline,creoleBoldUnderlineItalic,creoleItalicBoldUnderline,creoleItalicUnderlineBold,creoleUnderlineBoldItalic,creoleUnderlineItalicBold,creoleMiscFormatting,creoleBreak,creoleCode,creoleUrl
-syn region creoleImgBlock matchgroup=creoleKeyword start=+{{+ end=+}}+ contains=creoleLinkBar,creoleBold,creoleItalic,creoleUnderline,creoleBoldItalic,creoleBoldUnderline,creoleItalicBold,creoleItalicUnderline,creoleUnderlineBold,creoleUnderlineItalic,creoleBoldItalicUnderline,creoleBoldUnderlineItalic,creoleItalicBoldUnderline,creoleItalicUnderlineBold,creoleUnderlineBoldItalic,creoleUnderlineItalicBold,creoleMiscFormatting,creoleBreak,creoleCode,creoleUrl
+syn region creoleImgBlock  matchgroup=creoleKeyword start=+{{+ end=+}}+     contains=creoleLinkBar,creoleBold,creoleItalic,creoleUnderline,creoleBoldItalic,creoleBoldUnderline,creoleItalicBold,creoleItalicUnderline,creoleUnderlineBold,creoleUnderlineItalic,creoleBoldItalicUnderline,creoleBoldUnderlineItalic,creoleItalicBoldUnderline,creoleItalicUnderlineBold,creoleUnderlineBoldItalic,creoleUnderlineItalicBold,creoleMiscFormatting,creoleBreak,creoleCode,creoleUrl
 syn match creoleLinkBar "|" contained
 syn match creoleLinkBar "->" contained
 
@@ -27,23 +27,23 @@ syn region creoleMiscFormatting   matchgroup=creoleKeyword start=+,,+ end=+,,+ e
 
 syn region creolePlugin   matchgroup=creoleKeyword start=+<<+ end=+>>+ end=+$+
 
-syn region creoleBold   matchgroup=creoleKeyword start=+\*\*+ end=+\*\*+ end=+\(\n\n\)\@=+ end=+\(\n[*#:;=>]\)\@=+ contains=creoleBoldItalic,creoleBoldUnderline,creoleLinkBlock
-syn region creoleItalicBold matchgroup=creoleKeyword start=+\*\*+ end=+\*\*+ end=+\(\n\n\)\@=+ contained contains=creoleItalicBoldUnderline,creoleLinkBlock
-syn region creoleUnderlineBold matchgroup=creoleKeyword start=+\*\*+ end=+\*\*+ end=+\(\n\n\)\@=+ contained contains=creoleUnderlineBoldItalic,creoleLinkBlock
+syn region creoleBold                matchgroup=creoleKeyword start=+\*\*+ end=+\*\*+ end=+\(\n\n\)\@=+ end=+\(\n[*#:;=>]\)\@=+ contains=creoleBoldItalic,creoleBoldUnderline,creoleLinkBlock
+syn region creoleItalicBold          matchgroup=creoleKeyword start=+\*\*+ end=+\*\*+ end=+\(\n\n\)\@=+ contained contains=creoleItalicBoldUnderline,creoleLinkBlock
+syn region creoleUnderlineBold       matchgroup=creoleKeyword start=+\*\*+ end=+\*\*+ end=+\(\n\n\)\@=+ contained contains=creoleUnderlineBoldItalic,creoleLinkBlock
 syn region creoleItalicUnderlineBold matchgroup=creoleKeyword start=+\*\*+ end=+\*\*+ end=+\(\n\n\)\@=+ contained contains=creoleLinkBlock
 syn region creoleUnderlineItalicBold matchgroup=creoleKeyword start=+\*\*+ end=+\*\*+ end=+\(\n\n\)\@=+ contained contains=creoleLinkBlock
 
-syn region creoleItalic matchgroup=creoleKeyword start=+//+ end=+//+ end=+\(\n\n\)\@=+ skip=+://+ contains=creoleItalicBold,creoleItalicUnderline,creoleLinkBlock
-syn region creoleBoldItalic matchgroup=creoleKeyword start=+//+ end=+//+ end=+\(\n\n\)\@=+ contained contains=creoleBoldItalicUnderline,creoleLinkBlock
-syn region creoleUnderlineItalic matchgroup=creoleKeyword start=+//+ end=+//+ end=+\(\n\n\)\@=+ contained contains=creoleUnderlineItalicBold,creoleLinkBlock
-syn region creoleBoldUnderlineItalic matchgroup=creoleKeyword start=+//+ end=+//+ end=+\(\n\n\)\@=+ contained contains=creoleLinkBlock
-syn region creoleUnderlineBoldItalic matchgroup=creoleKeyword start=+//+ end=+//+ end=+\(\n\n\)\@=+ contained contains=creoleLinkBlock
+syn region creoleItalic              matchgroup=creoleKeyword start=+//+   end=+//+   end=+\(\n\n\)\@=+ skip=+://+ contains=creoleItalicBold,creoleItalicUnderline,creoleLinkBlock
+syn region creoleBoldItalic          matchgroup=creoleKeyword start=+//+   end=+//+   end=+\(\n\n\)\@=+ contained contains=creoleBoldItalicUnderline,creoleLinkBlock
+syn region creoleUnderlineItalic     matchgroup=creoleKeyword start=+//+   end=+//+   end=+\(\n\n\)\@=+ contained contains=creoleUnderlineItalicBold,creoleLinkBlock
+syn region creoleBoldUnderlineItalic matchgroup=creoleKeyword start=+//+   end=+//+   end=+\(\n\n\)\@=+ contained contains=creoleLinkBlock
+syn region creoleUnderlineBoldItalic matchgroup=creoleKeyword start=+//+   end=+//+   end=+\(\n\n\)\@=+ contained contains=creoleLinkBlock
 
-syn region creoleUnderline matchgroup=creoleKeyword start=+__+ end=+__+ end=+\(\n\n\)\@=+ contains=creoleUnderlineItalic,creoleUnderlineBold,creoleLinkBlock
-syn region creoleBoldUnderline matchgroup=creoleKeyword start=+__+ end=+__+ end=+\(\n\n\)\@=+ contained contains=creoleBoldUnderlineItalic,creoleLinkBlock
-syn region creoleItalicUnderline matchgroup=creoleKeyword start=+__+ end=+__+ end=+\(\n\n\)\@=+ contained contains=creoleItalicUnderlineBold,creoleLinkBlock
-syn region creoleBoldItalicUnderline matchgroup=creoleKeyword start=+__+ end=+__+ end=+\(\n\n\)\@=+ contained contains=creoleLinkBlock
-syn region creoleItalicBoldUnderline matchgroup=creoleKeyword start=+__+ end=+__+ end=+\(\n\n\)\@=+ contained contains=creoleLinkBlock
+syn region creoleUnderline           matchgroup=creoleKeyword start=+__+   end=+__+   end=+\(\n\n\)\@=+ contains=creoleUnderlineItalic,creoleUnderlineBold,creoleLinkBlock
+syn region creoleBoldUnderline       matchgroup=creoleKeyword start=+__+   end=+__+   end=+\(\n\n\)\@=+ contained contains=creoleBoldUnderlineItalic,creoleLinkBlock
+syn region creoleItalicUnderline     matchgroup=creoleKeyword start=+__+   end=+__+   end=+\(\n\n\)\@=+ contained contains=creoleItalicUnderlineBold,creoleLinkBlock
+syn region creoleBoldItalicUnderline matchgroup=creoleKeyword start=+__+   end=+__+   end=+\(\n\n\)\@=+ contained contains=creoleLinkBlock
+syn region creoleItalicBoldUnderline matchgroup=creoleKeyword start=+__+   end=+__+   end=+\(\n\n\)\@=+ contained contains=creoleLinkBlock
 
 syn region creoleH1     matchgroup=creoleHead start="^\s*=[^=]" end="\(\s*=\+\s*\)\?$"
 syn region creoleH2     matchgroup=creoleHead start="^\s*==[^=]" end="\(\s*=\+\s*\)\?$"
