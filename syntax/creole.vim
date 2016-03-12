@@ -56,7 +56,7 @@ syn region creoleTableLine matchgroup=creoleTableBorder start=+^\s*|=\?+ end=+|\
 syn match creoleTableCell "[^|]*\(|=\?\)\@!" contained contains=creoleBold,creoleItalic,creoleUnderline,creoleBoldItalic,creoleBoldUnderline,creoleItalicBold,creoleItalicUnderline,creoleUnderlineBold,creoleUnderlineItalic,creoleBoldItalicUnderline,creoleBoldUnderlineItalic,creoleItalicBoldUnderline,creoleItalicUnderlineBold,creoleUnderlineBoldItalic,creoleUnderlineItalicBold,creoleMiscFormatting,creoleBreak,creoleCode
 syn match creoleTableBorder "|=\?" contained
 
-syn match creoleHRule   "^\s*----\s*$"
+syn match creoleHRule   "^\s*-----*\s*$"
 syn match creoleBreak   "\\\\"
 
 syn cluster creoleInline contains=creoleUrl,creoleEscape,creoleLinkBlock,creoleImgBlock,creoleCode,creoleMiscFormatting,creolePlugin,creoleBold,creoleItalic,creoleUnderline,creoleBoldItalic,creoleBoldUnderline,creoleItalicBold,creoleItalicUnderline,creoleUnderlineBold,creoleUnderlineItalic,creoleBoldItalicUnderline,creoleBoldUnderlineItalic,creoleItalicBoldUnderline,creoleItalicUnderlineBold,creoleUnderlineBoldItalic,creoleUnderlineItalicBold,creoleBreak
